@@ -15,11 +15,43 @@ html, body, div {
 
 .portada {
   background-color: #7DC1C0;
-  overflow-y: hidden;
+  overflow: hidden;
   height: 100vh;
   /*scroll snap*/
   scroll-snap-align: start;
   min-height: 60vh;
+}
+
+.portadaIMG {
+  display: flex;
+  height: 100vh;
+  align-items: flex-end;
+}
+
+#portadaIMG {
+  width: 100vw;
+}
+
+#swipeIMG {
+  margin: 0px;
+  width: 4vw;
+  /*display: flex;             no puedo centrarlo, uso left.
+  justify-content: center;*/
+  position: relative;
+  bottom: 15vh;
+  left: 46.5vw;
+  z-index: 1
+}
+
+#titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4.5rem;
+  color: #184341;
+  /*posicion*/
+  position: relative;
+  bottom: 75vh;
+  display: flex;
+  justify-content: center;
 }
 
 .pantalla1 {
@@ -36,20 +68,4 @@ html, body, div {
   /*scroll snap*/
   scroll-snap-align: start;
   min-height: 60vh;
-}
-
-#titulo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 4.5rem;
-  color: #184341;
-  /*posicion*/
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 40vh;
-}
-
-#portadaIMG {
-  position: relative;
-  top: 41vh;
 }
