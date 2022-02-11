@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 html, body, div {
   margin: 0px;
@@ -28,20 +28,9 @@ html, body, div {
   align-items: flex-end;
 }
 
-#swipeIMG {
-  margin: 0px;
-  width: 4vw;
-  /*display: flex;             no puedo centrarlo, uso left.
-  justify-content: center;*/
-  position: relative;
-  bottom: 15vh;
-  left: 46.5vw;
-  z-index: 1
-}
-
 #titulo {
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 4.5rem;
   color: #184341;
   /*posicion*/
@@ -52,16 +41,48 @@ html, body, div {
 }
 
 #subtitulo {
-  font-weight: normal;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #4B6C59;
+  /*posicion*/
+}
+
+#navTxt {
+  font-weight: 400;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   color: #184341;
   /*posicion*/
 }
 
+#swipeIMG {
+  margin: 0px;
+  width: 4vw;
+  position: relative;
+  bottom: 12vh;
+  z-index: 1
+}
+
+#swipe {
+  margin: 0px;
+  width: 4vw;
+  /*display: flex;             no puedo centrarlo, uso left.
+  justify-content: center;*/
+  position: relative;
+  z-index: 1
+}
+
 .nav {
   display: flex;
   align-items: center;
+}
+
+.swipeFlexBox {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 82vh;
 }
 
 .caracteristicas {
@@ -70,4 +91,10 @@ html, body, div {
   /*scroll snap*/
   scroll-snap-align: start;
   min-height: 60vh;
+}
+
+.informacion {
+  padding-left: 5.3vw;
+  position: relative;
+  bottom: 9vh;
 }
