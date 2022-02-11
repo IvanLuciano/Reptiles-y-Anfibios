@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 html, body, div {
   margin: 0px;
@@ -28,10 +28,6 @@ html, body, div {
   align-items: flex-end;
 }
 
-#portadaIMG {
-  width: 100vw;
-}
-
 #swipeIMG {
   margin: 0px;
   width: 4vw;
@@ -45,6 +41,7 @@ html, body, div {
 
 #titulo {
   font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   font-size: 4.5rem;
   color: #184341;
   /*posicion*/
@@ -54,16 +51,21 @@ html, body, div {
   justify-content: center;
 }
 
-.pantalla1 {
-  background-color: lightgreen;
-  height: 100vh;
-  /*scroll snap*/
-  scroll-snap-align: start;
-  min-height: 60vh;
+#subtitulo {
+  font-weight: normal;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #184341;
+  /*posicion*/
 }
 
-.pantalla2 {
-  background-color: lightyellow;
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.caracteristicas {
+  background-color: #FAF9E2;
   height: 100vh;
   /*scroll snap*/
   scroll-snap-align: start;
