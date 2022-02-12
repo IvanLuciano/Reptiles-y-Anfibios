@@ -1,16 +1,12 @@
-let animado = document.querySelectorAll(".animado");
-let hacerFlex = document.querySelectorAll(".caractImgFixed");
+$(document).ready(function() {
 
-function mostrarScroll() {
-  let scrollTop = document.documentElement.scrollTop;
-  for (var i = 0; i < animado.lenght; i++) {
-    log(i);
-    let altura = animado[i].offsetTop;
-    if (altura - 500 < scrollTop) {
-      animado[i].style.opacity = 1;
-      /* hacerFlex.style.display = "flex"; */
+  $(".contenedor").scroll(function () {
+    var y = $(this).scrollTop();
+    if (y >= 520 & y <= 3240) {
+      $(".caractImgFixed").fadeIn(250);
+    } else {
+      $(".caractImgFixed").fadeOut(50);
     }
-  }
-}
-
-window.addEventListener('scroll', mostrarScroll);
+    console.log(y);
+  });
+});

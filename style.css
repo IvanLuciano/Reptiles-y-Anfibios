@@ -110,12 +110,8 @@ html, body, div {
 
 .caractImgFixed {
   width:55vw;
-  /*display: flex;*/
-  /*position: fixed;*/
+  display: none;
+  position: fixed;
 
-  /*habría que usar esas dos lineas de arriba (y una que está en el .js tambien comentada) pero con el fixed no deja scrollear mientras
-  está el mouse arriba por mas que tenga opacity = 0, por lo que pensé usar el display = none; y que se active a la vez que el transition
-   con la opacidad (aun que una vez se muestre de nuevo el display seguria dando el mismo problema de no poder scrollear sobre la imagen)*/
-  position: relative;
   bottom: 35vh;
 }
