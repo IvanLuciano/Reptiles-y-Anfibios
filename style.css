@@ -10,7 +10,7 @@ html, body, div {
   justify-content: center;
 }
 
-.animado{
+.animado {
   opacity: 0;
   transition: all 0.5s;
 }
@@ -81,6 +81,7 @@ html, body, div {
   z-index: 1
 }
 
+
 /*  CARACTERISTICAS   */
 .nav {
   display: flex;
@@ -92,6 +93,12 @@ html, body, div {
   justify-content: center;
   position: relative;
   top: 82vh;
+}
+.swipeFlexBox2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 218vh;
 }
 
 .caracteristicas {
@@ -109,9 +116,39 @@ html, body, div {
 }
 
 .caractImgFixed {
-  width:55vw;
+  width: 55vw;
   display: none;
   position: fixed;
-
   bottom: 35vh;
+}
+
+#navTxt2 {
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #FFFFFF;
+  /*posicion*/
+}
+
+.peligro {
+  background: linear-gradient(to bottom, #DE4C4C, #A1372D, #6C2513, #49979B);
+  /*scroll snap*/
+  scroll-snap-align: start;
+  min-height: 235vh;
+}
+
+.peligroAnfibios {
+  background-color: #3E9599;
+  height: 100vh;
+  /*scroll snap*/
+  scroll-snap-align: start;
+  min-height: 60vh;
+}
+
+.peligroReptiles {
+  background-color: #4B6C59;
+  height: 100vh;
+  /*scroll snap*/
+  scroll-snap-align: start;
+  min-height: 60vh;
 }
