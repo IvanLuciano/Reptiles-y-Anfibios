@@ -8,6 +8,7 @@ html, body, div {
 .center {
   display: flex;
   justify-content: center;
+  pointer-events: none;
 }
 
 .animado {
@@ -54,7 +55,6 @@ html, body, div {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
-  color: #4B6C59;
   /*posicion*/
 }
 
@@ -62,7 +62,7 @@ html, body, div {
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  color: #184341;
+  color: #000000;
   /*posicion*/
 }
 
@@ -81,7 +81,6 @@ html, body, div {
   z-index: 1
 }
 
-
 /*  CARACTERISTICAS   */
 .nav {
   display: flex;
@@ -94,15 +93,9 @@ html, body, div {
   position: relative;
   top: 82vh;
 }
-.swipeFlexBox2 {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 218vh;
-}
 
 .caracteristicas {
-  background-color: #FAF9E2;
+  background-color: #C4C4C4;
   height: 100vh;
   /*scroll snap*/
   scroll-snap-align: start;
@@ -122,33 +115,14 @@ html, body, div {
   bottom: 35vh;
 }
 
-#navTxt2 {
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: #FFFFFF;
-  /*posicion*/
-}
-
 .peligro {
-  background: linear-gradient(to bottom, #DE4C4C, #A1372D, #6C2513, #49979B);
+  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 300vh, #4B6C59 400vh);
   /*scroll snap*/
   scroll-snap-align: start;
-  min-height: 235vh;
+  min-height: 460vh;
 }
 
-.peligroAnfibios {
-  background-color: #3E9599;
-  height: 100vh;
-  /*scroll snap*/
-  scroll-snap-align: start;
-  min-height: 60vh;
-}
-
-.peligroReptiles {
-  background-color: #4B6C59;
-  height: 100vh;
-  /*scroll snap*/
-  scroll-snap-align: start;
-  min-height: 60vh;
+.peligroInfo {
+  padding: 0 5.3vw;
+  position: relative;
 }
