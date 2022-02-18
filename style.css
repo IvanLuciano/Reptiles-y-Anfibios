@@ -116,7 +116,7 @@ html, body, div {
 }
 
 .peligro {
-  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 300vh, #4B6C59 400vh);
+  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 270vh, #4B6C59 400vh);
   /*scroll snap*/
   scroll-snap-align: start;
   min-height: 460vh;
