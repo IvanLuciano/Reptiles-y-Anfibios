@@ -9,6 +9,7 @@ html, body, div {
   display: flex;
   justify-content: center;
   pointer-events: none;
+  margin: 0px;
 }
 
 .animado {
@@ -116,7 +117,7 @@ html, body, div {
 }
 
 .peligro {
-  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 270vh, #4B6C59 400vh);
+  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 270vh, #4B6C59 295vh);
   /*scroll snap*/
   scroll-snap-align: start;
   min-height: 460vh;
