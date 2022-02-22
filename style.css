@@ -62,7 +62,7 @@ html, body, div {
 #navTxt {
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #000000;
   /*posicion*/
 }
@@ -95,6 +95,14 @@ html, body, div {
   top: 82vh;
 }
 
+.swipeFlexBoxCausas {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10vh;
+  justify-content: space-between;
+}
+
 .caracteristicas {
   background-color: #C4C4C4;
   height: 100vh;
@@ -117,10 +125,15 @@ html, body, div {
 }
 
 .peligro {
-  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 270vh, #4B6C59 295vh);
+  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 260vh, #4B6C59 345vh, #9A4230 360vh);
   /*scroll snap*/
   scroll-snap-align: start;
-  min-height: 460vh;
+  min-height: 375vh;
+
+  /*      como en figma:
+    background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 260vh, #4B6C59 335vh, #9A4230 345vh);
+    min-height: 355vh;
+  */
 }
 
 .peligroInfo {
@@ -129,7 +142,7 @@ html, body, div {
 }
 
 .causas{
-  background-color:blue;
+  background-color: #9A4230;
   display:flex;
   display: none;
 
@@ -147,11 +160,17 @@ html, body, div {
 }
 
 #causa-1{
-  background-color:red;
+  background-image: url("data/img/causa1.jpg");
 }
 #causa-2{
-    background-color:green;
+  background-image: url("data/img/causa2.jpg");
 }
 #causa-3{
-    background-color:yellow;
+  background-image: url("data/img/causa3.jpg");
+}
+#causa-4{
+  background-image: url("data/img/causa4.jpg");
+}
+#causa-5{
+  background-image: url("data/img/causa5.jpg");
 }

@@ -6,24 +6,17 @@ $(document).ready(function() {
     if (y >= 520 & y <= 3240) {
       $(".caractImgFixed").fadeIn(250);
     } else {
-      $(".caractImgFixed").fadeOut(50);
+      $(".caractImgFixed").fadeOut(200);
     }
     console.log(y);
 
     //Habilitar causas
 
-    if(y > 4500){
+  if(y > 7210){
 
       $(".causas").css( "display", "flex" );
       $(".contenedor").hide()
     }
-
-
   });
-
-
-
-
-
 
 });
