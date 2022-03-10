@@ -26,7 +26,7 @@ class Personaje {
       image(this.imgPj0, -this.pjx, this.pjy, 170, 120);
     } else {
       fill(90, 180, 90);
-      rect(this.pjx, this.pjy, 170, 120);
+      image(this.imgPj0, this.pjx, this.pjy, 170, 120);
     }
     pop();
   }
@@ -88,14 +88,27 @@ class Objetos {
     this.objx = random(this.posx, this.posx + 215);
     this.objy = random(this.posy, this.posy - 1900);
     //tam objeto
-    this.tam = 105;
+    this.tam = 175;
     this.velo = 6.3;
+
+
+    this.objsImgs = [];
+
+    for (let i = 0; i < 11; i++) {
+      this.objsImgs[i] = loadImage("img/causas/nerf"+[i]+".png");
+      this.randomImg = int(random(0,12));
+    }
   }
   dibujado() {
     push();
+
+    imageMode(CENTER);
+    image(this.objsImgs[this.randomImg], this.objx, this.objy, this.tam, this.tam);
+    /*
     rectMode(CENTER);
     fill(random(0, 250), 80, random(0, 20))
     rect(this.objx, this.objy, this.tam, this.tam);
+    */
     pop();
   }
   funcionalidad() {
@@ -140,12 +153,14 @@ class Fruta {
   constructor() {
     this.px = x / 2;
     this.py = 0 - random(1900, 2500);
+
+    this.frutaImg = loadImage("img/causas/buff0.png");
   }
 
   dibujado() {
     push();
-    fill(42, 175, 80);
-    ellipse(this.px, this.py, 80, 80);
+    imageMode(CENTER);
+    image(this.frutaImg, this.px, this.py, 125, 125);
     pop();
   }
 
@@ -261,12 +276,13 @@ class Funcion {
       this.reposicionamiento = true;
     }
 
+    /*
     push();
     fill(255,0,0,20);
     rectMode(CORNERS);
     rect(x/2-150,0,x/2+150,y);
     pop();
-
+    */
     if (this.tiempo >= 2175 && this.tiempo <= 2240) { // PROTECCION antiMuerte injusta POR EL TELETRANSPORTE
       for (let i = 0; i < 7; i++) {
         if (objs[i].objx > x / 2 - 150 && objs[i].objx < x / 2 + 150) { // detecta objetos en el centro de la pantalla y los mueve arriba así le da tiempo al pj a moverse
@@ -331,7 +347,7 @@ class Puntajes {
   ganarPuntos() {
     print(this.agarrarFruta)
     this.agarrarFruta = dist(pj.pjx, pj.pjy, frt.px, frt.py);
-    if (this.agarrarFruta <= 75) {
+    if (this.agarrarFruta <= 125) {
       if (fn.tiempo <= 2175) {
         frt.px = random(280, 1640);
         frt.py = 0 - random(1900, 2500);
