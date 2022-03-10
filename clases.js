@@ -11,6 +11,7 @@ class Personaje {
 
     this.imgPj0 = loadImage("img/pj.png");
     this.botonMov = loadImage("img/botonMov.png");
+    this.botonMovPress = loadImage("img/botonMovPress.png");
   }
 
   dibujado() {
@@ -25,7 +26,7 @@ class Personaje {
       image(this.imgPj0, -this.pjx, this.pjy, 170, 120);
     } else {
       fill(90, 180, 90);
-      rect(this.pjx, this.pjy, 170, 120);
+      image(this.imgPj0, this.pjx, this.pjy, 170, 120);
     }
     pop();
   }
@@ -43,23 +44,32 @@ class Personaje {
     }
     // BOTONES LATERALES // BOTONES LATERALES // BOTONES LATERALES // BOTONES LATERALES
 
-    image(this.botonMov, 0, y / 3, 120, 350);
+    image(this.botonMov, 25, y / 3, 125, 404);
     push();
     scale(-1, 1);
-    image(this.botonMov, -x, y / 3, 120, 350);
+    image(this.botonMov, -x+25, y / 3, 124, 404);
     pop();
 
     if (mouseIsPressed) {
       push();
-      if (mouseX > 0 && mouseX < 120 && mouseY > y / 3 && mouseY < y / 3 + 350) {
+      if (mouseX > 25 && mouseX < 125 && mouseY > y / 3 && mouseY < y / 3 + 404) {
         this.pjx -= 3.4;
         this.dibujarI = true;
         this.dibujarD = false;
+
+
+        image(this.botonMovPress, 25, y / 3, 124, 404);
       }
-      if (mouseX > x - 120 && mouseX < x && mouseY > y / 3 && mouseY < y / 3 + 350) {
+      if (mouseX > x - 125 && mouseX < x-25 && mouseY > y / 3 && mouseY < y / 3 + 404) {
         this.pjx += 3.4;
         this.dibujarD = true;
         this.dibujarI = false;
+
+
+        push();
+        scale(-1, 1);
+        image(this.botonMovPress, -x+25, y / 3, 124, 404);
+        pop();
       }
       pop();
     }
@@ -78,14 +88,27 @@ class Objetos {
     this.objx = random(this.posx, this.posx + 215);
     this.objy = random(this.posy, this.posy - 1900);
     //tam objeto
-    this.tam = 105;
+    this.tam = 175;
     this.velo = 6.3;
+
+
+    this.objsImgs = [];
+
+    for (let i = 0; i < 11; i++) {
+      this.objsImgs[i] = loadImage("img/causas/nerf"+[i]+".png");
+      this.randomImg = int(random(0,12));
+    }
   }
   dibujado() {
     push();
+
+    imageMode(CENTER);
+    image(this.objsImgs[this.randomImg], this.objx, this.objy, this.tam, this.tam);
+    /*
     rectMode(CENTER);
     fill(random(0, 250), 80, random(0, 20))
     rect(this.objx, this.objy, this.tam, this.tam);
+    */
     pop();
   }
   funcionalidad() {
@@ -103,7 +126,9 @@ class Objeto {
 
     // FONDOS FONDOS FONDOS FONDOS FONDOS FONDOS FONDOS FONDOS FONDOS FONDOS //
 
-    this.imgInicio = loadImage("img/inicio.jpg");
+    this.imgInst1 = loadImage("img/instruccion1.jpg");
+    this.imgInst2 = loadImage("img/instruccion2.jpg");
+    this.imgInst3 = loadImage("img/instruccion3.jpg");
     this.imgBackground = loadImage("img/background.jpg");
     this.imgWin = loadImage("img/win.jpg");
     this.imgLose = loadImage("img/lose.jpg");
@@ -128,12 +153,14 @@ class Fruta {
   constructor() {
     this.px = x / 2;
     this.py = 0 - random(1900, 2500);
+
+    this.frutaImg = loadImage("img/causas/buff0.png");
   }
 
   dibujado() {
     push();
-    fill(42, 175, 80);
-    ellipse(this.px, this.py, 80, 80);
+    imageMode(CENTER);
+    image(this.frutaImg, this.px, this.py, 125, 125);
     pop();
   }
 
@@ -170,9 +197,8 @@ class Funcion {
 
     this.reposicionamiento = false;
 
-    this.imgBarraTiempo = loadImage("img/IMGBarraTiempo.png")
-    this.imgProgreso = loadImage("img/IMGProgreso.png")
-    this.imgReloj = loadImage("img/IMGreloj.png")
+    this.imgBarraTiempo = loadImage("img/IMGBarraTiempo.png");
+    this.imgReloj = loadImage("img/IMGreloj.png");
   }
   bordes() {
     //  BORDES  #  BORDES  #  BORDES  #  BORDES  #  BORDES  #  BORDES  #  BORDES  #
@@ -206,17 +232,19 @@ class Funcion {
 
   barraDeTiempo() {
     //  BARRA TIEMPO  ##  BARRA TIEMPO  ##  BARRA TIEMPO  ##  BARRA TIEMPO  ##
-    this.barrax = map(this.tiempo, 0, 2700, 115, 535);
+    this.barrax = map(this.tiempo, 0, 2700, 255, 670);
     push();
 
-    image(this.imgBarraTiempo, 35, 20, 500, 85);
+    push();
+    image(this.imgBarraTiempo, 175, 50, 500, 85);
+    pop();
     push();
     rectMode(CORNERS);
-    fill(0, 198, 114);
+    fill(53, 176, 246);
     noStroke();
-    rect(35, 17, this.barrax, 100, 255);
+    rect(175, 47, this.barrax, 130, 255);
     pop();
-    image(this.imgReloj, 50, 35);
+    image(this.imgReloj, 190, 65);
     pop();
   }
 
@@ -244,20 +272,21 @@ class Funcion {
       pop();
     }
 
-    if (this.tiempo >= 2175 && this.tiempo <= 2179) { // ACTIVAR REPORSICIONAMIENTO
+    if (this.tiempo >= 2175 && this.tiempo <= 2180) { // ACTIVAR REPORSICIONAMIENTO
       this.reposicionamiento = true;
     }
 
-    /*push();
+    /*
+    push();
     fill(255,0,0,20);
     rectMode(CORNERS);
-    rect(x/2-90,0,x/2+90,y);
-    pop();*/
-
+    rect(x/2-150,0,x/2+150,y);
+    pop();
+    */
     if (this.tiempo >= 2175 && this.tiempo <= 2240) { // PROTECCION antiMuerte injusta POR EL TELETRANSPORTE
       for (let i = 0; i < 7; i++) {
-        if (objs[i].objx > x / 2 - 90 && objs[i].objx < x / 2 + 90) { // detecta objetos en el centro de la pantalla y los mueve arriba así le da tiempo al pj a moverse
-          objs[i].objy = random(-75, -500);
+        if (objs[i].objx > x / 2 - 150 && objs[i].objx < x / 2 + 150) { // detecta objetos en el centro de la pantalla y los mueve arriba así le da tiempo al pj a moverse
+          objs[i].objy = random(-75, -750);
         }
       }
     }
@@ -298,19 +327,18 @@ class Puntajes {
   constructor() {
     this.puntuacion = 0;
     this.agarrarFruta = 999;
+
+    this.IMGPuntaje = loadImage("img/IMGPuntaje.png");
   }
 
   puntaje() {
     push();
-    rectMode(CORNER);
-    fill(0, 198, 114);
-    noStroke();
-    rect(1660, 25, 210, 85, 32);
+    image(this.IMGPuntaje,1575, 50, 210, 85);
 
     textSize(45);
     fill(255);
-    text(int(this.puntuacion), x - 225, 85);
-    text("pts", x - 140, 85);
+    text(int(this.puntuacion), x - 320, 105);
+    text("pts", x - 225, 103);
     pop();
 
     this.puntuacion += .04;
@@ -319,7 +347,7 @@ class Puntajes {
   ganarPuntos() {
     print(this.agarrarFruta)
     this.agarrarFruta = dist(pj.pjx, pj.pjy, frt.px, frt.py);
-    if (this.agarrarFruta <= 75) {
+    if (this.agarrarFruta <= 125) {
       if (fn.tiempo <= 2175) {
         frt.px = random(280, 1640);
         frt.py = 0 - random(1900, 2500);

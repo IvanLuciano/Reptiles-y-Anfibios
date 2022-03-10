@@ -1,6 +1,8 @@
 let x = 1920,
   y = 1080;
 
+let instruccionesTimer = 720;
+
 let pantallas = 0;
 
 let objs = [];
@@ -24,20 +26,23 @@ function setup() {
 function draw() {
   if (pantallas == 0) {
     // INICIO  INICIO  INICIO  INICIO  INICIO  INICIO  INICIO  INICIO  INICIO  INICIO  INICIO  INICIO
-    background(obj.imgInicio);
-    /*
-    push();
-    fill(170, 20, 20);
-    rectMode(CORNERS)
-    rect(640, 590, 1280, 700);
-    pop();
-    */
-    if (mouseIsPressed && mouseX > 640 && mouseX < 1280 && mouseY > 590 && mouseY < 700) {
-      fn.reinicio();
+    instruccionesTimer +=1;
+    if(instruccionesTimer >= 0 && instruccionesTimer <= 240){
+      background(obj.imgInst1);
+    }
+    if(instruccionesTimer >= 241 && instruccionesTimer <= 480){
+      background(obj.imgInst2);
+    }
+    if(instruccionesTimer >= 481 && instruccionesTimer <= 720){
+      background(obj.imgInst3);
+    }
+    if(instruccionesTimer >= 721){
       pantallas = 1;
     }
+
   }
   if (pantallas == 1) {
+    instruccionesTimer = 0;
     // JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR  JUGAR
     fn.pasarTiempo();
     background(obj.imgBackground);
