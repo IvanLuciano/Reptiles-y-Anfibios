@@ -94,7 +94,7 @@ class Objetos {
 
     this.objsImgs = [];
 
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 13; i++) {
       this.objsImgs[i] = loadImage("img/causas/nerf"+[i]+".png");
       this.randomImg = int(random(0,12));
     }
@@ -117,6 +117,10 @@ class Objetos {
     if (this.objy > y - 150) {
       this.objx = random(this.posx, this.posx + 215);
       this.objy = random(this.posy, this.posy - 1900);
+
+      for (let i = 0; i < 13; i++) {
+        this.randomImg = int(random(0,12));
+      }
     }
   }
 }
