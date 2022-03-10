@@ -1,7 +1,7 @@
 let x = 1920,
   y = 1080;
 
-let instruccionesTimer = 720;
+let instruccionesTimer = 0;
 
 let pantallas = 0;
 
