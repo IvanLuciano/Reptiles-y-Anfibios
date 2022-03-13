@@ -1,7 +1,55 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
+
 canvas {
+
+  position: fixed;
+  top: 0;
+  left: 0;
   display: block;
+  background-color: blue;
+
+
+}
+
+#flecha-izquierda{
+
+  position: absolute;
+  z-index: 50;
+  left:50px;
+  top:50px;
+  
+}
+
+}
+#flecha-derecha{
+
+  position: absolute;
+  z-index: 50;
+  right:50px;
+  top:50px;
+  width: 200px;
+    height: 200px;
+}
+
+}
+
+#container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2; }
+
+
+#personaje{
+
+  display:none;
+}
+#causa{
+
+  display:none;
 }
