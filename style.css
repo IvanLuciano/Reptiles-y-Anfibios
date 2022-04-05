@@ -1,0 +1,890 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');*/
+
+
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/roboto-medium.ttf");
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins-Regular.ttf");
+
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins-SemiBold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins-Bold.ttf");
+    font-weight: bolder;
+}
+
+html, body, div {
+  margin: 0px;
+  padding: 0px;
+}
+
+.center {
+  justify-content: center;
+  pointer-events: none;
+  margin: 0px;
+}
+
+.animado {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.contenedor {
+  background-color: red;
+  height: 100vh;
+  /*scroll snap*/
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.portada {
+  background-color: #7DC1C0;
+  overflow: hidden;
+  height: 100vh;
+  /*scroll snap*/
+  scroll-snap-align: start;
+  min-height: 60vh;
+  z-index: 50;
+}
+
+.portadaIMG {
+  display: flex;
+  height: 100vh;
+  align-items: flex-end;
+}
+
+#titulo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 4.5rem;
+  color: #184341;
+  /*posicion*/
+  position: relative;
+  bottom: 75vh;
+  display: flex;
+  justify-content: center;
+}
+
+#subtitulo {
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 62px;
+  margin-bottom: 15px;
+  /*posicion*/
+}
+#subtitulo-2 {
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  margin-top: 15px;
+  color: #4B6C59;
+  /*posicion*/
+}
+
+#subtitulo-reptiles{
+
+  font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    margin-top: 15px;
+    color: #4B6C59;
+    position: absolute;
+    top: 91px;
+    right: 627px;
+}
+
+#navTxt {
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+#swipeTxt {
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #000000;
+}
+#swipeTxt2 {
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.1rem;
+  color:white;
+}
+#swipeTxt3 {
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #fffff6;
+}
+
+#swipeIMG {
+  margin: 0px;
+  width: 4vw;
+  position: relative;
+  bottom: 12vh;
+  z-index: 1
+}
+
+#swipe {
+  margin: 0px;
+  width: 4vw;
+  position: relative;
+  z-index: 1;
+
+  animation: desliza2 1s alternate infinite;
+  animation-timing-function: ease;
+  opacity: .6;
+}
+#swipe2 {
+  margin: 0px;
+    width: 5vw;
+    position: relative;
+    z-index: 1;
+    animation: desliza2 .4s alternate infinite;
+    animation-timing-function: ease;
+    opacity: 1;
+}
+#swipe3{
+  position:relative;
+  animation: desliza3 1s alternate infinite;
+  animation-timing-function: ease;
+  opacity: .6;
+}
+
+@keyframes desliza3 {
+  0% {
+      right: 0px;
+  }
+  100% {
+        right: 20px;
+  }
+}
+
+
+
+/*  CARACTERISTICAS   */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.swipeFlexBox {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 82vh;
+}
+
+.swipeFlexBoxCausas {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 10vh;
+}
+
+.caracteristicas {
+  background-color: #C4C4C4;
+  height: 100vh;
+  /*scroll snap*/
+  scroll-snap-align: start;
+  min-height: 60vh;
+}
+
+.informacion {
+  padding: 0 5.3vw;
+  position: relative;
+  bottom: 10vh;
+}
+
+.caractImgFixed {
+  width: 55vw;
+  display: none;
+  position: fixed;
+  bottom: 35vh;
+}
+
+#habitat{
+
+  background-color: #FFFFF6
+}
+
+
+
+
+.peligro {
+  background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 260vh, #4B6C59 345vh, #9A4230 360vh);
+  /*scroll snap*/
+  scroll-snap-align: start;
+  min-height: 375vh;
+  /*      como en figma:
+    background: linear-gradient(to bottom, #DE4C4C 0vh, #862E1F 85vh, #3A8C90 260vh, #4B6C59 335vh, #9A4230 345vh);
+    min-height: 355vh;
+  */
+}
+
+.peligroInfo {
+  padding: 0 5.3vw;
+  position: relative;
+}
+
+.causas {
+  background-color: #9A4230;
+  display: flex;
+  display: none;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+.causa-nucleo {
+  height: 1063px;
+      scroll-snap-align: start;
+      min-width: 100vw;
+      overflow-y: hidden;
+}
+
+#causa-1 {
+  background-image: url("data/img/causas/causa1/causa1_fondo.jpg");
+}
+
+#causa-2 {
+  background-image: url("data/img/causas/causa2/causa2_fondo.jpg");
+}
+
+#causa-3 {
+  background-image: url("data/img/causas/causa3/causa3_fondo.jpg");
+}
+
+#causa-4 {
+  background-image: url("data/img/causas/causa4/causa4_fondo.jpg");
+}
+
+#causa-5 {
+  background-image: url("data/img/causas/causa5/causa5_fondo.jpg");
+}
+
+#causa-6 {
+  background-image: url("data/img/causas/causa6/causa6_fondo.jpg");
+}
+
+#causa-7 {
+  background-image: url("data/img/causas/causa7/causa7_fondo.jpg");
+}
+
+#causa-8 {
+  background-image: url("data/img/causas/causa8/causa8_fondo.jpg");
+}
+
+#juego {
+  background-image: url("data/img/homeJuego.jpg");
+}
+
+/* Animaciones y elementos */
+
+
+/* PORTADA */
+
+@keyframes desliza {
+  0% {
+      bottom: 12vh;
+  }
+  100% {
+        bottom: 14vh;
+  }
+}
+@keyframes desliza2 {
+  0% {
+      bottom: 0px;
+  }
+  100% {
+        bottom: 20px;
+  }
+}
+
+#swipeIMG{
+  animation: desliza .8s alternate infinite;
+ animation-timing-function: ease;
+
+}
+
+/* HABITAT */
+
+
+.datos{
+font-family: Roboto;
+font-weight: medium;
+font-size: 28px;
+color: #524F4F;
+}
+#dato1{
+  position: absolute;
+  left: 138px;
+  top: 445px;
+  width: 268px;
+}
+#dato2{
+position: absolute;
+    left: 261px;
+    bottom: 92px;
+    width: 268px;
+}
+
+#dato3{
+  position: absolute;
+right: 549px;
+top: 431px;
+width: 331px;
+}
+
+#dato4{
+position: absolute;
+    right: 221px;
+    bottom: 104px;
+    width: 287px;
+}
+
+#flecha1{
+  position: absolute;
+  left: 244px;
+  top: 384px;
+}
+
+#flecha2{
+  position: absolute;
+  left: 483px;
+  bottom: 136px;
+}
+
+#flecha3{
+  position: absolute;
+  right: 655px;
+  top: 388px;
+}
+#flecha4{
+  position: absolute;
+    right: 540px;
+    bottom: 157px
+}
+
+
+#rana{
+  position: absolute;
+left: 451px;
+bottom: 305px;
+display: none;
+}
+
+#agua{
+  width: 650px;
+  height: 564px;
+  background: transparent url('data/img/habitat/agua_4.png') 0 0 no-repeat;
+  animation: aguafluye 1s steps(14) infinite;
+  position: absolute;
+    top: 298px;
+    left: 210px;
+
+}
+
+@keyframes aguafluye {
+  100% { background-position: -9069px 0; }
+}
+
+#nubes{
+  width: 451px;
+  height: 214px;
+  background: transparent url('data/img/habitat/nubes_sprite.png') 0 0 no-repeat;
+  animation: nubosidad 1s steps(7) infinite;
+  right: 211px;
+    position: absolute;
+    top: 305px;
+}
+
+@keyframes nubosidad {
+  100% { background-position: -3157px 0; }
+}
+
+
+#fondo-tortuga{
+  position: absolute;
+  width: 631px;
+  bottom: 231px;
+  right: 193px;
+}
+
+#tortuga{
+  position: absolute;
+    bottom: 305px;
+    right: 286px;
+}
+
+/* Estilo Caracteristicas */
+#fondo-rana-2{
+  width: 529px;
+  height: 564px;
+  position: absolute;
+    top: 415px;
+    left: 210px;
+}
+
+#rana-2{
+  position: absolute;
+left: 451px;
+bottom: 305px;
+display: none;
+}
+
+#fondo-tortuga-2{
+  position: absolute;
+  width: 631px;
+  bottom: 231px;
+  right: 193px;
+}
+
+#tortuga-2{
+  position: absolute;
+    bottom: 305px;
+    right: 286px;
+}
+
+#pulmones-1{
+  position: absolute;
+    left: 179px;
+    top: 395px;
+}
+#pulmones-2{
+  position: absolute;
+  right: 160px;
+  top: 395px;
+}
+#vertebrados-fria{
+  width: 139px;
+    top: 458px;
+    right: 872px;
+    position: absolute;
+}
+#piel-lisa{
+  width: 216px;
+  top: 734px;
+  left: 245px;
+  position: absolute;
+}
+#escamas{
+  width: 216px;
+top: 764px;
+right: 212px;
+position: absolute;
+}
+#larva{
+  width: 148px;
+    top: 731px;
+    left: 631px;
+    position: absolute;
+}
+
+#dato5{
+  position: absolute;
+    left: 119px;
+    top: 508px;
+    width: 341px;
+}
+#dato6{
+  position: absolute;
+  left: 464px;
+    bottom: 68px;
+    width: 334px;
+}
+#dato7{
+  position: absolute;
+      right: 22px;
+      top: 513px;
+      width: 268px;
+}
+#dato8{
+  position: absolute;
+    right: 78px;
+    bottom: 67px;
+    width: 350px;
+}
+#dato9{
+  position: absolute;
+      left: 241px;
+      top: 927px;
+      width: 268px;
+}
+#dato10{
+  position: absolute;
+  left: 878px;
+  top: 585px;
+  width: 268px;
+}
+#dato11{
+  position: absolute;
+  left: 865px;
+  top: 794px;
+  width: 268px;
+}
+
+#flecha5{
+  position: absolute;
+  left: 328px;
+    bottom: 398px;
+}
+#flecha6{
+  position: absolute;
+  left: 1629px;
+      bottom: 389px;
+}
+#flecha7{
+  position: absolute;
+  left: 693px;
+    bottom: 187px;
+}
+#flecha8{
+  position: absolute;
+  left: 786px;
+bottom: 191px;
+}
+#flecha9{
+  position: absolute;
+  right: 753px;
+  bottom: 191px;
+}
+
+
+/* Estilo Desarrollo */
+
+
+
+
+
+#rana-desarrollo{
+  width: 668px;
+  height: 421px;
+  background: transparent url('data/img/desarrollo/ranasprites.png') 0 0 no-repeat;
+  animation: ranacrece 4s steps(8) infinite;
+
+  position: absolute;
+    top: 462px;
+    left: 210px;
+
+}
+
+@keyframes ranacrece {
+  100% { background-position: -5344px 0; }
+}
+
+#toruga-desarrollo{
+  width: 615px;
+  height: 386px;
+  background: transparent url('data/img/desarrollo/tortugasprites.png') 0 0 no-repeat;
+  animation: tortucrece 2s steps(15) infinite;
+
+  position: absolute;
+  top: 573px;
+  right: 190px;
+
+}
+
+@keyframes tortucrece {
+  100% { background-position: -9225px 0; }
+}
+
+
+
+
+#rana-3{
+  position: absolute;
+left: 451px;
+bottom: 305px;
+display: none;
+}
+
+#fondo-tortuga-3{
+  position: absolute;
+  width: 631px;
+  bottom: 231px;
+  right: 193px;
+}
+
+#tortuga-3{
+  position: absolute;
+    bottom: 305px;
+    right: 286px;
+}
+#huevos{
+
+  position: absolute;
+    bottom: 305px;
+    right: 181px;
+    width: 170px;
+}
+
+#dato12{
+  position: absolute;
+  left: 100px;
+  top: 350px;
+  width: 310px;
+}
+#dato13{
+  position: absolute;
+  left: 100px;
+  bottom: 52px;
+  width: 268px;
+}
+#dato14{
+  position: absolute;
+  left: 1084px;
+  top: 360px;
+  width: 371px;
+}
+#dato15{
+  position: absolute;
+  right: 100px;
+  bottom: 52px;
+  width: 268px;
+}
+
+
+#flecha10{
+  position: absolute;
+  left: 342px;
+  top: 438px;
+}
+#flecha11{
+  position: absolute;
+  left: 243px;
+    bottom: 159px;
+}
+#flecha12{
+  position: absolute;
+  right: 652px;
+    top: 463px;
+}
+#flecha13{
+  position: absolute;
+  right: 243px;
+    bottom: 159px;
+}
+
+/* PELIGRO */
+
+#subtitulo-peligro{
+  color: #FFFFFF;
+    width: 1138px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 71px;
+    margin-bottom: 15px;
+}
+
+#subtitulo-peligro2 {
+  color: #FFFFFF;
+  width: 1234px;
+  font-size: 1.8rem;
+  font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  font-size: 42px;
+  color: white;
+  line-height: 1.4;
+}
+#mapa-peligro{
+
+  margin-top: 51px;
+  margin-bottom: 45px;
+  margin-left: 67px;
+}
+
+.lista-roja{
+  display:flex;
+
+}
+
+.lista-roja-texto{
+  width: 49%;
+  padding-top: 32px;
+
+}
+.lista-roja-parrafo{
+
+  color: #FFFFFF;
+    font-size: 40px;
+    font-family: 'Roboto';
+    width: 826px;
+    line-height: 1.6;
+
+}
+.lista-roja-gif{
+width: 45%;
+
+}
+.anfibios-peligro{
+  display: flex;
+flex-wrap: nowrap;
+align-items: center;
+justify-content: space-evenly;
+}
+.reptiles-peligro{
+
+  display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* CAUSAS */
+#causa1-elem{
+  position: absolute;
+  top: 18px;
+}
+#causa2-elem{
+  position: absolute;
+    top: 88px;
+    left: 57px;
+}
+#causa3-elem{
+  position: absolute;
+    top: 62px;
+    left: 154px;
+}
+#causa4-elem{
+  position: absolute;
+    top: -101px;
+    left: 101px;
+}
+#causa5-elem{
+  position: absolute;
+    top: -61px;
+    left: 86px;
+}
+#causa6-elem{
+  position: absolute;
+  top: 66px;
+      left: 297px;
+}
+#causa7-elem{
+  position: absolute;
+  top: -24px;
+    left: 51px;
+}
+#causa8-elem{
+  position: absolute;
+  top: -54px;
+    left: 85px;
+}
+
+
+
+
+#causa2-humo{
+  position: absolute;
+    top: -169px;
+    right: 322px;
+}
+#causa2-lluvia-acida{
+  position: absolute;
+    top: 67px;
+    right: 238px;
+}
+#causa3-tornado{
+  position: absolute;
+    top: 160px;
+    left: 609px;
+}
+#causa4-barco{
+  position: absolute;
+top: 226px;
+left: 611px;
+}
+#causa5-axolote{
+  position: absolute;
+    top: 693px;
+    left: 135px;
+}
+#causa5-lagarto{
+  position: absolute;
+    top: 374px;
+    right: 624px;
+}
+#causa5-rana{
+  position: absolute;
+    top: 171px;
+    right: 595px;
+}
+#causa5-tortuga{
+  position: absolute;
+top: 146px;
+right: 120px;
+}
+#causa5-serpiente{
+  position: absolute;
+  top: 376px;
+      right: 167px;
+      width: 366px;
+}
+#causa5-triton{
+  position: absolute;
+  top: 200px;
+      right: 865px;
+      width: 267px;
+}
+
+
+#causa6-rana{
+  position: absolute;
+  top: 279px;
+    left: 206px;
+}
+
+#causa6-tortuga{
+  position: absolute;
+  top: 624px;
+right: 145px;
+}
+
+#causa7-rana{
+  position: absolute;
+  top: 342px;
+      left: 114px;
+}
+#causa8-tortuga{
+  position: absolute;
+  top: 275px;
+left: 784px;
+}
+#causa8-burbuja{
+  position: absolute;
+  top: 532px;
+    right: 600px;
+}
+
+#causa1-represa{
+  position: absolute;
+    top: 516px;
+    right: 2px;
+}
+#causa1-pantano{
+  position: absolute;
+    top: 648px;
+    left: -41px;
+}
+#flecha-swipe-lateral{
+  position: absolute;
+    bottom: 62px;
+    right: 58px;
+    width: 171px;
+    display: flex;
+    align-items: center;
+
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="main.js" type="text/javascript"></script> -->
+  <script src="jQuery.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="contenedor">
+
+
+    <div class="portada">
+      <div class="portadaIMG">
+        <img style="width: 100vw;" src="data/img/portada.png" alt="homeImage">
+      </div>
+      <div style="display: flex; justify-content:center; position: relative;">
+        <img id="swipeIMG" src="data/img/swipeIcon.png" alt="swipeUpIcon">
+      </div>
+      <h1 id="titulo">REPTILES Y ANFIBIOS</h1>
+    </div>
+
+
+    <div id="habitat"  class="caracteristicas"> <!-- HABITAT  -->
+      <div class="nav">
+        <a onClick="window.location.reload();" ><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #184341;">Conocé a los Anfibios y Reptiles</h3>
+      </div>
+      <div class="swipeFlexBox">
+        <img id="swipe" src="data/img/swipeCaract.png" alt="swipeUpIcon">
+      </div>
+      <div class="informacion">
+        <h2 id="subtitulo" style="color: #4B6C59;">HÁBITAT</h2>
+        <h2 id="subtitulo-2">Anfibios</h2>
+        <h2 id="subtitulo-reptiles">Reptiles</h2>
+      </div>
+      <div class="center">
+        <div class="elemento-dinamico habitat-obj" id="agua"></div>
+        <img class="elemento-dinamico habitat-obj" id="rana" src="data/img/habitat/rana.gif" alt="">
+        <img class="elemento-dinamico habitat-obj" id="fondo-tortuga" src="data/img/habitat/fondotortuga_631x533.svg" alt="">
+        <img class="elemento-dinamico habitat-obj" id="tortuga" src="data/img/habitat/tortuga.gif" alt="">
+        <div class="elemento-dinamico habitat-obj" id="nubes"></div>
+      </div>
+      <div class="textos">
+        <p class="datos elemento-dinamico habitat-obj" id="dato1">Necesitan ambientes húmedos para vivir</p>
+        <p class="datos elemento-dinamico habitat-obj" id="dato2">Viven en tierra o agua dulce</p>
+        <p class="datos elemento-dinamico habitat-obj" id="dato3">Pueden vivir en cualquier tipo de ambiente</p>
+        <p class="datos elemento-dinamico habitat-obj" id="dato4">Viven principalmente en tierra</p>
+      </div>
+      <div class="flechas">
+        <img class="elemento-dinamico habitat-obj" id="flecha1" src="data/img/flecha1_230x45.png" alt="">
+        <img class="elemento-dinamico habitat-obj" id="flecha3" src="data/img/flecha2_172x45.png" alt="">
+        <img class="elemento-dinamico habitat-obj" id="flecha2" src="data/img/flecha3_88x131.png" alt="">
+        <img class="elemento-dinamico habitat-obj" id="flecha4" src="data/img/flecha4_90x131.png" alt="">
+      </div>
+    </div>
+
+
+    <div style="background-color: #FFF8F6; opacity: 1;" class="caracteristicas">  <!-- CARACTERISTICAS  -->
+      <div class="nav">
+        <a onClick="window.location.reload();" ><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #184341;">Conocé a los Anfibios y Reptiles</h3>
+      </div>
+      <div class="swipeFlexBox">
+        <img id="swipe" src="data/img/swipeCaract.png" alt="swipeUpIcon">
+      </div>
+      <div class="informacion">
+        <h2 id="subtitulo" style="color: #4B6C59;">CARACTERÍSTICAS</h2>
+        <h2 id="subtitulo-2">Anfibios</h2>
+        <h2 id="subtitulo-reptiles">Reptiles</h2>
+      </div>
+      <div class="center">
+        <img class="elemento-dinamico caracteristicas-obj" id="fondo-rana-2" src="data/img/caracteristicas/piso rana_529x183.svg" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="rana-2" src="data/img/habitat/rana.gif" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="fondo-tortuga-2" src="data/img/caracteristicas/piso tortuga_ 631x165.svg" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="tortuga-2" src="data/img/habitat/tortuga.gif" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="pulmones-1" src="data/img/caracteristicas/pulmones.gif" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="pulmones-2" src="data/img/caracteristicas/pulmones.gif" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="vertebrados-fria" src="data/img/caracteristicas/vertebrados_FRIA_139x347.svg" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="piel-lisa" src="data/img/caracteristicas/lupa piel lisa_216x201.svg" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="escamas" src="data/img/caracteristicas/lupa caparazon_216x201.svg" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="larva" src="data/img/caracteristicas/larva_148x41.svg" alt="">
+
+      </div>
+      <div class="textos">
+        <p class="datos elemento-dinamico caracteristicas-obj" id="dato5">Respiran por pulmones cuando son adultos</p>
+        <p class="datos elemento-dinamico caracteristicas-obj" id="dato6">Respiran por branquias cuando son larvas</p>
+        <p class="datos elemento-dinamico caracteristicas-obj" id="dato7">Respiran por pulmones</p>
+        <p class="datos elemento-dinamico caracteristicas-obj" id="dato8">Caparazón y escamas</p>
+        <p class="datos elemento-dinamico caracteristicas-obj" id="dato9">Piel lisa</p>
+        <p class="datos elemento-dinamico caracteristicas-obj" id="dato10">Son vertebrados</p>
+        <p class="datos elemento-dinamico caracteristicas-obj" id="dato11">Tienen sangre fría</p>
+      </div>
+      <div class="flechas">
+        <img class="elemento-dinamico caracteristicas-obj" id="flecha5" src="data/img/caracteristicas/flecha5_112x68.png" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="flecha6" src="data/img/caracteristicas/flecha6_67x68.png" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="flecha7" src="data/img/caracteristicas/flecha7_25x93.png" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="flecha8" src="data/img/caracteristicas/flecha8.png" alt="">
+        <img class="elemento-dinamico caracteristicas-obj" id="flecha9" src="data/img/caracteristicas/flecha9.png" alt="">
+      </div>
+
+
+    </div>
+
+
+    <div style="background-color: #FCFFFF;" class="caracteristicas"> <!-- DESARROLLO  -->
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #184341;">Conocé a los Anfibios y Reptiles</h3>
+      </div>
+      <div class="swipeFlexBox">
+        <img id="swipe" src="data/img/swipePeligro.png" alt="swipeUpIcon">
+      </div>
+      <div style="top: 79vh;" class="swipeFlexBox">
+        <p id="swipeTxt" style="color: #DB4C4B;">Conocé qué especies están en peligro</p>
+      </div>
+
+      <div class="informacion">
+        <h2 id="subtitulo" style="color: #4B6C59;">DESARROLLO</h2>
+        <h2 id="subtitulo-2">Anfibios</h2>
+        <h2 id="subtitulo-reptiles">Reptiles</h2>
+      </div>
+
+      <div class="center">
+
+
+        <div class="elemento-dinamico desarrollo-obj agua-2" id="agua"></div>
+        <img class="elemento-dinamico desarrollo-obj" id="fondo-tortuga-3" src="data/img/habitat/fondotortuga_631x533.svg" alt="">
+        <div class="elemento-dinamico desarrollo-obj" id="rana-desarrollo"></div>
+        <div class="elemento-dinamico desarrollo-obj" id="toruga-desarrollo"></div>
+        <img class="elemento-dinamico desarrollo-obj" id="huevos" src="data/img/desarrollo/huevoadesarrollo_178x108.svg" alt="">
+
+
+
+      </div>
+      <div class="textos">
+        <p class="datos elemento-dinamico desarrollo-obj" id="dato12">Pasan por un proceso de metamorfosis</p>
+        <p class="datos elemento-dinamico desarrollo-obj" id="dato13">Nacen de huevos puestos en el agua</p>
+        <p class="datos elemento-dinamico desarrollo-obj" id="dato14">Mantienen su forma desde que nacen hasta que mueren</p>
+        <p class="datos elemento-dinamico desarrollo-obj" id="dato15">Nacen de huevos puestos en la tierra</p>
+      </div>
+      <div class="flechas">
+        <img class="elemento-dinamico desarrollo-obj" id="flecha10" src="data/img/desarrollo/flecha8_25x100.png" alt="">
+        <img class="elemento-dinamico desarrollo-obj" id="flecha12" src="data/img/desarrollo/flecha9_25x92.png" alt="">
+        <img class="elemento-dinamico desarrollo-obj" id="flecha11" src="data/img/desarrollo/flecha10_25x161.png" alt="">
+        <img class="elemento-dinamico desarrollo-obj" id="flecha13" src="data/img/desarrollo/flecha10_25x181.png" alt="">
+
+      </div>
+
+
+
+    </div>
+
+    <!-- PELIGRO PELIGRO PELIGRO PELIGRO -->
+
+    <div class="peligro">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Peligro de extinción</h3>
+      </div>
+
+      <div class="peligroInfo">
+        <h2 id="subtitulo-peligro">¿Por qué los anfibios y reptiles están en peligro de extinción?</h2>
+        <p id="subtitulo-peligro2" > Como consecuencia de de cambios producidos a nivel planetario disminuyen sus poblaciones y cambia su distribución geográfica.</p>
+        <div class="center">
+          <img id="mapa-peligro" src="data/img/peligro/mapablanco_1483x743.gif">
+        </div>
+        <div style="justify-content: space-between; margin-top: 32px;" class="lista-roja center">
+
+          <div  class="lista-roja-texto">
+            <h2 id="subtitulo" style="color: #FFFFFF;">Lista roja</h2>
+            <p class="lista-roja-parrafo">Creada por la Unión Internacional para la Conseración de la Naturaleza, es un inventario elaborado por miles de especialistas de todo el mundo para conocer el estado
+              de conservación de una especie.</p>
+            <p class="lista-roja-parrafo">En esta lista identifican qué especies presentan mayor riesgo de extinción.</p>
+          </div>
+
+          <div  class="lista-roja-gif">
+            <img id="listarojagif"  src="data/img/peligro/listaroja.gif" alt="listaRoja">
+          </div>
+        </div>
+
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 100px;">Anfibios</h2>
+        <div class="anfibios-peligro">
+          <img id="anfibios-peligro-img-1"src="data/img/peligro/anfibios_1.png" alt="">
+          <img id="anfibios-peligro-img-2"src="data/img/peligro/lista_anfibios.gif" alt="">
+          <img id="anfibios-peligro-img-3"src="data/img/peligro/anfibios_2.png" alt="">
+        </div>
+
+
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 100px;">Reptiles</h2>
+        <div class="reptiles-peligro">
+          <img id="reptiles-peligro-img-1" src="data/img/peligro/reptiles_1.png" alt="">
+          <img id="reptiles-peligro-img-2" src="data/img/peligro/reptiles_2.gif" alt="">
+
+
+        </div>
+        <div style=" margin-top: 115px; top: 2vh;" class="swipeFlexBox">
+          <img id="swipe2" src="data/img/swipe.png" alt="swipeUpIcon">
+        </div>
+        <div style="top: 0vh;" class="swipeFlexBox">
+          <p id="swipeTxt2" >Conocé las causas de su extinción</p>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- CONTENEDOR -->
+
+  <div class="causas">
+
+    <div class=" causa-nucleo" id="causa-1">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Pricipales causas</h3>
+      </div>
+
+      <div class="peligroInfo">
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">DESTRUCCIÓN DE LOS HÁBITATS</h2>
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 5px; margin-bottom: 5px; font-size: 2.3rem;">por la actividad humana</h2>
+
+        <img id="causa1-represa" src="data/img/causas/causa1/represa.gif" alt="">
+        <img id="causa1-pantano" src="data/img/causas/causa1/pantano.gif" alt="">
+          <img id="causa1-elem" src="data/img/causas/causa1/causa1_elem.png" alt="">
+
+      </div>
+
+      <div id="flecha-swipe-lateral"  >
+        <img id="swipe3" src="data/img/swipeR.png" alt="swipeR">
+        <p  id="swipeTxt3">Deslizá</p>
+      </div>
+    </div>
+
+    <div class="causa-nucleo" id="causa-2">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Pricipales causas</h3>
+      </div>
+
+      <div class="peligroInfo">
+
+
+
+        <img id="causa2-humo" src="data/img/causas/causa2/humo.gif" alt="">
+        <h2 id="subtitulo" style="position: relative; color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">CONTAMINACIÓN</h2>
+        <img id="causa2-lluvia-acida" src="data/img/causas/causa2/lluvia-acida.gif" alt="">
+        <img id="causa2-elem" src="data/img/causas/causa2/causa2_elem.png" alt="">
+
+      </div>
+
+
+    </div>
+
+    <div class="causa-nucleo" id="causa-3">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Pricipales causas</h3>
+      </div>
+
+      <div class="peligroInfo">
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">CAMBIOS CLIMÁTICOS GLOBALES</h2>
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 5px; margin-bottom: 5px; font-size: 2.3rem;"></h2>
+
+        <img id="causa3-tornado" src="data/img/causas/causa3/tornado.gif" alt="">
+        <img id="causa3-elem" src="data/img/causas/causa3/causa3_elem.png" alt="">
+
+      </div>
+
+
+    </div>
+
+    <div class="causa-nucleo" id="causa-4">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Pricipales causas</h3>
+      </div>
+
+      <div class="peligroInfo">
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">CAZA O PESCA INTENCIONAL</h2>
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 5px; margin-bottom: 5px; font-size: 2.3rem;"></h2>
+          <img id="causa4-barco" src="data/img/causas/causa4/barco.gif" alt="">
+        <img id="causa4-elem" src="data/img/causas/causa4/causa4_elem.png" alt="">
+
+      </div>
+
+    </div>
+
+    <div class="causa-nucleo" id="causa-5">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Pricipales causas</h3>
+      </div>
+
+      <div class="peligroInfo">
+        <h2 id="subtitulo" style="width: 579px; color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">TRÁFICO ILEGAL COMO MASCOTAS</h2>
+
+        <img id="causa5-serpiente" src="data/img/causas/causa5/serpiente_366x291.svg" alt="">
+        <img id="causa5-triton" src="data/img/causas/causa5/triton_267x163.svg" alt="">
+
+        <img id="causa5-axolote" src="data/img/causas/causa5/axolote-jaula.gif" alt="">
+        <img id="causa5-lagarto" src="data/img/causas/causa5/lagarto-jaula.gif" alt="">
+        <img id="causa5-rana" src="data/img/causas/causa5/rana-jaula.gif" alt="">
+        <img id="causa5-tortuga" src="data/img/causas/causa5/tortuga-jaula.gif" alt="">
+      <img id="causa5-elem" src="data/img/causas/causa5/causa5_elem.png" alt="">
+
+      </div>
+
+
+    </div>
+
+    <div class="causa-nucleo" id="causa-6">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Dos casos opuestos</h3>
+      </div>
+
+      <div class="peligroInfo">
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">RANA TORO Y TORTUGAS</h2>
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 5px; margin-bottom: 5px; font-size: 2.3rem;"></h2>
+
+        <img id="causa6-rana" src="data/img/causas/causa6/ranacasos.gif" alt="">
+        <img id="causa6-tortuga" src="data/img/causas/causa6/tortugacasos.gif" alt="">
+      <img id="causa6-elem" src="data/img/causas/causa6/causa6_elem.png" alt="">
+
+      </div>
+
+
+    </div>
+
+    <div class="causa-nucleo" id="causa-7">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">El caso de la Rana Toro</h3>
+      </div>
+
+      <div class="peligroInfo">
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">RANA TORO</h2>
+        <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 5px; margin-bottom: 5px; font-size: 2.3rem;"></h2>
+
+        <img id="causa7-rana" src="data/img/causas/causa7/ranatoro.gif" alt="">
+      <img id="causa7-elem" src="data/img/causas/causa7/causa7_elem.png" alt="">
+
+      </div>
+
+
+    </div>
+
+    <div class="causa-nucleo" id="causa-8">
+      <div class="nav">
+        <a onClick="window.location.reload();"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">El caso de las tortugas</h3>
+      </div>
+
+      <div class="peligroInfo">
+
+
+        <img id="causa8-tortuga" src="data/img/causas/causa8/casotortu.gif" alt="">
+        <img id="causa8-burbuja" src="data/img/causas/causa8/burbuja.gif" alt="">
+      <img id="causa8-elem" src="data/img/causas/causa8/causa8_elem.png" alt="">
+      <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 65px; margin-bottom: 5px;">TORTUGAS</h2>
+      <h2 id="subtitulo" style="color: #FFFFFF; margin-top: 5px; margin-bottom: 5px; font-size: 2.3rem;"></h2>
+
+      </div>
+
+
+    </div>
+
+    <div class="causa-nucleo" id="juego">
+      <div class="nav">
+        <a href="juego/juego.html"><img style="width: 6vh; margin-right: 32px; margin-left: 8px;" src="data/img/home2.png " alt="homeButton"></a>
+        <h3 id="navTxt" style="color: #FFFFFF;">Salvá a las tortugas</h3>
+      </div>
+
+      <div style="position: relative; top: 525px; z-index:99;" class="center">
+        <a href="juego/juego.html">
+        <div style="width: 660px; height: 100px;"></div>
+        </a>
+      </div>
+    </div>
+
+  </div> <!-- CAUSAS -->
+  <script src="funcion.js" type="text/javascript"></script>
+</body>
+
+</html>
