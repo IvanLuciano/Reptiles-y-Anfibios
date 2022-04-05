@@ -14,6 +14,7 @@ $(document).ready(function() {
   var causantes = 0;
   var numero = 0;
   var jugar =true;
+  var perdisteBol = false;
 
 
 
@@ -206,13 +207,15 @@ $(document).ready(function() {
           }
           for (i in shapes) {
             if (collision(this, shapes[i])) {
-              stage=2;
-              perdiste();
+
+              perdisteBol = true;
 
               //newGame();
             }
           }
         }
+
+
 
         //POSICION //POSICION //POSICION //POSICION //POSICION //POSICION //POSICION
 
@@ -256,6 +259,17 @@ $(document).ready(function() {
         barra.tiempo = 0;
       }
 
+      function Perder(){
+        this.derrota = function() {
+            if(perdisteBol){
+            stage=2;
+            perdiste();
+          }
+        }
+      }
+
+      var perder = new Perder();
+
       function Ganar() {
         this.victoria = function() {
         //  console.log("pantalla:" + stage);
@@ -288,6 +302,7 @@ $(document).ready(function() {
         personaje.update();
         barra.update();
         ganar.victoria();
+        perder.derrota();
       }
 
       //Updater();
