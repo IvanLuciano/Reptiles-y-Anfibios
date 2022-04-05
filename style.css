@@ -18,6 +18,7 @@ canvas {
   z-index: 50;
   left: 50px;
   top: 30vh;
+  display:none;
 }
 
 #flecha-derecha {
@@ -25,6 +26,7 @@ canvas {
   z-index: 50;
   left: 1729px;
   top: 30vh;
+  display:none;
 }
 
 #container {
@@ -41,6 +43,9 @@ canvas {
 #causa {
   display: none;
 }
+
+
+
 
 #inst1, inst2, inst3, barra, icoReloj progreso{
   display: none;

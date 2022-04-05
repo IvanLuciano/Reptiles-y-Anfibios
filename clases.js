@@ -9,8 +9,12 @@ $(document).ready(function() {
   var shapes = {};
   var shapeIndex = 0;
   var score = 0;
-  var fallSpeed = 0.5;
-  var shapeGenerateSpeed = 7000;
+  var fallSpeed = 0.09;
+  var shapeGenerateSpeed = 1000;
+  var causantes = 0;
+  var numero = 0;
+  var jugar =true;
+
 
 
   //DIMENSIONES CANVAS //DIMENSIONES CANVAS //DIMENSIONES CANVAS //DIMENSIONES CANVAS
@@ -28,11 +32,11 @@ $(document).ready(function() {
   canvas.height = screenHeight;
 
 
-    if (stage == 0) {
+
+
+
       function Instrucciones() {
         this.tiempo = 0;
-
-
 
         this.draw = function() {
           if (this.tiempo >= 0 && this.tiempo <= 440) {
@@ -44,11 +48,15 @@ $(document).ready(function() {
           if (this.tiempo >= 480 && this.tiempo <= 1220) {
             ctx.drawImage(document.getElementById('inst3'), 0, 0);
           }
+
+
         }
 
         this.reset = function() {
-          if (this.tiempo >= 721) {
+          if (this.tiempo >= 721 && jugar== true) {
             stage = 1;
+            $("#flecha-izquierda").show();
+            $("#flecha-derecha").show();
             arranca();
 
           }
@@ -65,21 +73,29 @@ $(document).ready(function() {
           this.reset();
           this.timer();
         }
+
+        function Actualizador() {
+          ctx.clearRect(0, 0, screenWidth, screenHeight);
+          if(jugar){
+          instrucciones.update();
+          }else{
+            return}
+
+        }
+        var cicloIns = setInterval(Actualizador, 10);
+        if(stage==2){
+          clearInterval(cicloIns)
+        }
+
       }
 
-      var instrucciones = new Instrucciones();
+
+      if (stage == 0) {
+        var instrucciones = new Instrucciones();
+
+        }
 
 
-      function Actualizador() {
-        ctx.clearRect(0, 0, screenWidth, screenHeight);
-        instrucciones.update();
-      }
-
-      setInterval(Actualizador, 10);
-    }
-
-
-    
 
       //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO
 
@@ -106,8 +122,12 @@ $(document).ready(function() {
         }
 
         this.update = function() {
+          if(jugar){
           this.draw();
           this.funcionamiento();
+          } else{
+            return;
+          }
         }
       }
 
@@ -116,6 +136,7 @@ $(document).ready(function() {
       //OBJETOS //OBJETOS //OBJETOS //OBJETOS //OBJETOS //OBJETOS //OBJETOS //OBJETOS //OBJETOS
 
       function Shape(posX, width, height) {
+        var numerin = numero;
         this.Width = width;
         this.Height = height;
 
@@ -124,14 +145,22 @@ $(document).ready(function() {
           Y: -this.Height
         };
 
+        fallSpeed+=0.001;
         this.Velocity = fallSpeed;
         this.Index = shapeIndex;
 
         shapes[shapeIndex] = this;
         shapeIndex++;
 
+
+
+
+        numero++;
+        if(numero>11){
+          numero=0;
+        }
         this.Draw = function() {
-          ctx.drawImage(document.getElementById('causa'), this.Position.X, this.Position.Y, this.Width, this.Height);
+          ctx.drawImage(document.getElementById('causa'+numerin), this.Position.X, this.Position.Y, this.Width, this.Height);
         }
 
         this.updatePosition = function() {
@@ -177,7 +206,10 @@ $(document).ready(function() {
           }
           for (i in shapes) {
             if (collision(this, shapes[i])) {
-              newGame();
+              stage=2;
+              perdiste();
+
+              //newGame();
             }
           }
         }
@@ -201,12 +233,14 @@ $(document).ready(function() {
 
         // MOVIMIENTO// MOVIMIENTO// MOVIMIENTO// MOVIMIENTO// MOVIMIENTO// MOVIMIENTO
 
-        $("#flecha-izquierda").mousedown(function() {
-          personaje.Position.X += -25;
+        $("#flecha-izquierda").on('mousedown',function() {
+          personaje.Position.X += -35;
+
         });
 
-        $("#flecha-derecha").mousedown(function() {
-          personaje.Position.X += 25;
+
+        $("#flecha-derecha").on('mousedown',function() {
+          personaje.Position  .X += 35;
         });
       }
 
@@ -225,8 +259,9 @@ $(document).ready(function() {
       function Ganar() {
         this.victoria = function() {
         //  console.log("pantalla:" + stage);
-          if (barra.tiempo == 3500) {
+          if (barra.tiempo >= 35000) {
             stage = 2;
+            ganaste();
           }
         }
       }
@@ -234,9 +269,15 @@ $(document).ready(function() {
       var ganar = new Ganar();
 
       function shapeGenerate() {
-        new Shape(Math.random() * screenWidth, 175, 175);
-        score++
-      //  console.log("score:" + score);
+
+
+        new Shape(Math.random() * screenWidth*10, 120, 120);
+        score++;
+        console.log("score:" + score);
+        if(stage==2 || stage ==3){
+          return;
+
+        }
       }
 
       function Updater() {
@@ -252,12 +293,54 @@ $(document).ready(function() {
       //Updater();
       function arranca(){
         if(stage ==1){
-        setInterval(Updater, 10);
-        setInterval(shapeGenerate, shapeGenerateSpeed);
-        }
+        ctx.clearRect(0, 0, screenWidth, screenHeight);
+        var ciclo = setInterval(Updater, 10);
+        shapeGenerate();
+
+          }else{
+            clearInterval(ciclo);
+            return;
+          }
       }
 
+      function ganaste(){
 
-    if (stage == 2) {}
+          if (stage == 2) {
+            var puntaje = score;
+            jugar=false;
+            $("#flecha-izquierda").hide();
+            $("#flecha-derecha").hide();
+            ctx.clearRect(0, 0, screenWidth, screenHeight);
+            ctx.drawImage(document.getElementById('ganar'), 0, 0);
+            ctx.font ="60px Arial";
+            ctx.fillText(""+puntaje,1120,475);
+          }
+    }
+
+    function perdiste(){
+      if (stage ==2){
+        var puntaje = score;
+        jugar=false;
+        $("#flecha-izquierda").hide();
+        $("#flecha-derecha").hide();
+        ctx.clearRect(0, 0, screenWidth, screenHeight);
+        ctx.drawImage(document.getElementById('perder'), 0, 0);
+        ctx.font ="60px Arial";
+        ctx.fillText(""+puntaje,1120,475);
+      }
+
+    }
+
+    function reiniciar(){
+      var shapes = {};
+      var shapeIndex = 0;
+      var score = 0;
+      var fallSpeed = 0.09;
+      var shapeGenerateSpeed = 1000;
+      var causantes = 0;
+    }
+
+
+
 
 });
