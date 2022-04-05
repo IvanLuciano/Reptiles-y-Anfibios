@@ -9,8 +9,8 @@ $(document).ready(function() {
   var shapes = {};
   var shapeIndex = 0;
   var score = 0;
-  var fallSpeed = 6.3;
-  var shapeGenerateSpeed = 275;
+  var fallSpeed = 0.5;
+  var shapeGenerateSpeed = 7000;
 
 
   //DIMENSIONES CANVAS //DIMENSIONES CANVAS //DIMENSIONES CANVAS //DIMENSIONES CANVAS
@@ -33,14 +33,15 @@ $(document).ready(function() {
         this.tiempo = 0;
 
 
+
         this.draw = function() {
-          if (this.tiempo >= 0 && this.tiempo <= 240) {
+          if (this.tiempo >= 0 && this.tiempo <= 440) {
             ctx.drawImage(document.getElementById('inst1'), 0, 0);
           }
-          if (this.tiempo >= 241 && this.tiempo <= 480) {
+          if (this.tiempo >= 241 && this.tiempo <= 880) {
             ctx.drawImage(document.getElementById('inst2'), 0, 0);
           }
-          if (this.tiempo >= 480 && this.tiempo <= 720) {
+          if (this.tiempo >= 480 && this.tiempo <= 1220) {
             ctx.drawImage(document.getElementById('inst3'), 0, 0);
           }
         }
@@ -48,13 +49,15 @@ $(document).ready(function() {
         this.reset = function() {
           if (this.tiempo >= 721) {
             stage = 1;
-            Juego();
+            arranca();
+
           }
         }
 
 
         this.timer = function() {
           this.tiempo++;
+
         }
 
         this.update = function() {
@@ -76,8 +79,7 @@ $(document).ready(function() {
     }
 
 
-    function Juego(){
-    if (stage == 1) {
+    
 
       //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO //BARRA TIEMPO
 
@@ -98,7 +100,8 @@ $(document).ready(function() {
         }
         this.funcionamiento = function() {
           this.tiempo++;
-          this.progreso = 80 + this.tiempo * 0.135;
+          console.log("este otro tiempo"+this.tiempo);
+          this.progreso = 80 + this.tiempo * 0.0135;
           // console.log(this.tiempo);
         }
 
@@ -125,7 +128,7 @@ $(document).ready(function() {
         this.Index = shapeIndex;
 
         shapes[shapeIndex] = this;
-        shapeIndex++
+        shapeIndex++;
 
         this.Draw = function() {
           ctx.drawImage(document.getElementById('causa'), this.Position.X, this.Position.Y, this.Width, this.Height);
@@ -198,11 +201,11 @@ $(document).ready(function() {
 
         // MOVIMIENTO// MOVIMIENTO// MOVIMIENTO// MOVIMIENTO// MOVIMIENTO// MOVIMIENTO
 
-        $("#flecha-izquierda").click(function() {
+        $("#flecha-izquierda").mousedown(function() {
           personaje.Position.X += -25;
         });
 
-        $("#flecha-derecha").click(function() {
+        $("#flecha-derecha").mousedown(function() {
           personaje.Position.X += 25;
         });
       }
@@ -221,7 +224,7 @@ $(document).ready(function() {
 
       function Ganar() {
         this.victoria = function() {
-          console.log("pantalla:" + stage);
+        //  console.log("pantalla:" + stage);
           if (barra.tiempo == 3500) {
             stage = 2;
           }
@@ -233,7 +236,7 @@ $(document).ready(function() {
       function shapeGenerate() {
         new Shape(Math.random() * screenWidth, 175, 175);
         score++
-        console.log("score:" + score);
+      //  console.log("score:" + score);
       }
 
       function Updater() {
@@ -246,9 +249,14 @@ $(document).ready(function() {
         ganar.victoria();
       }
 
-      setInterval(Updater, 10);
-      setInterval(shapeGenerate, shapeGenerateSpeed);}
-    }
+      //Updater();
+      function arranca(){
+        if(stage ==1){
+        setInterval(Updater, 10);
+        setInterval(shapeGenerate, shapeGenerateSpeed);
+        }
+      }
+
 
     if (stage == 2) {}
 
